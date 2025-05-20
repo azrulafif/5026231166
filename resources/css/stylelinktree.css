@@ -1,0 +1,53 @@
+body {
+  background-color: #052b2f;
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.header-img {
+  width: 300px;
+  max-width: 90%;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin: 0 8px;
+}
+
+.btn-custom {
+  background-color: #b8562f;
+  color: white;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  justify-content: center;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+.thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.video-container iframe {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.merch-box {
+  max-width: 400px;
+  width: 100%;
+}
+
+.merch-gallery {
+  margin-top: 10px;
+}
+
+.merch-item {
+  height: 100px;
+  border-radius: 10px;
+}

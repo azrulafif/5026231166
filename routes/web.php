@@ -1,14 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\coba;
+// import java.io; (sama kayak use)
 
-
+// System.out.println("Hello World");
 Route::get('/', function () {
-    return view('welcome');
-}); //simple controller
-
-Route::get('/selamat', function () {
     return view('welcome');
 });
 
@@ -20,4 +16,21 @@ Route::get('blog', function () {
 	return view('blog');
 });
 
-Route::get('hello',{coba::class, 'helloword'});
+Route::get('pertama', function () {
+	return view('pertama');
+});
+Route::get('bootstrap1', function () {
+	return view('bootstrap1');
+});
+Route::get('bootstrap2', function () {
+	return view('bootstrap2');
+});
+Route::get('bootstrap2', function () {
+	return view('bootstrap2');
+});
+Route::get('layout', function () {
+	return view('layout');
+});
+Route::get('Linktree', function () {
+	return view('Linktree');
+});
