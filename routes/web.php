@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\HTTP\Controllers\coba;
+use App\HTTP\Controllers\PegawaiController;
+use App\HTTP\Controllers\BlogController;
 // import java.io; (sama kayak use)
 
 // System.out.println("Hello World");
@@ -34,3 +37,13 @@ Route::get('layout', function () {
 Route::get('Linktree', function () {
 	return view('Linktree');
 });
+Route::get('dosen',[coba::class,'index']);
+
+Route::get('/pegawai/{nama}', [PegawaiController::class,'index']);
+
+Route::get('/formulir', [PegawaiController::class, 'formulir']);// adalah isian formulir
+Route::post('/formulir/proses',[PegawaiController::class, 'proses']);// action form
+
+Route::get('/blog', [BlogController::class, 'home']);
+Route::get('/blog/tentang', [BlogController::class, 'tentang']);
+Route::get('/blog/kontak', [BlogController::class, 'kontak']);
