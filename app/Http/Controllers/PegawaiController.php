@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class PegawaiController extends Controller
 {
     //
-    public function index($nama){
+    public function nama($nama){
      return $nama;
 }
     public function formulir(){
@@ -20,3 +21,4 @@ public function proses(Request $request){
         return "Nama : ".$nama.",<br> Alamat : ".$alamat . "<br> Aslinya :" .$request;
 }
 }
+
