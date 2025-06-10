@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\HTTP\Controllers\coba;
 use App\HTTP\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\GentengController;
+
 
 // import java.io; (sama kayak use)
 
@@ -54,3 +56,14 @@ Route::get('/pegawai/hapus/{id}',[PegawaiDBController::class,'hapus']);
 
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+Route::get('/genteng', [GentengController::class, 'index']);
+Route::get('/genteng/tambah', [GentengController::class, 'tambah']);
+Route::post('/genteng/store', [GentengController::class, 'store']);
+Route::get('/genteng/edit/{id}', [GentengController::class, 'edit']);
+Route::post('/genteng/update', [GentengController::class, 'update']);
+Route::get('/genteng/hapus/{id}', [GentengController::class, 'hapus']);
+Route::get('/genteng', [GentengController::class, 'index']);
+Route::get('/genteng/cari', [GentengController::class, 'cari']);
+
+

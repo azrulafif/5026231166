@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Nama :Azrul Afif S NRP : 502623166</title>
+    <title>Nama:Azrul Afif S NRP:5026231166</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
 
 <body>
     <div class="jumbotron text-center mx-auto">
-        <h1>Nama :Azrul Afif S</h1>
+        <h1>NRP:5026231166 Nama :Azrul Afif S</h1>
     </div>
 
     <nav class="navbar navbar-expand-sm bg-light">
