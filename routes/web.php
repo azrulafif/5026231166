@@ -5,6 +5,7 @@ use App\HTTP\Controllers\coba;
 use App\HTTP\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\GentengController;
+use App\Http\Controllers\KaryawanController;
 
 
 // import java.io; (sama kayak use)
@@ -65,5 +66,10 @@ Route::post('/genteng/update', [GentengController::class, 'update']);
 Route::get('/genteng/hapus/{id}', [GentengController::class, 'hapus']);
 Route::get('/genteng', [GentengController::class, 'index']);
 Route::get('/genteng/cari', [GentengController::class, 'cari']);
+
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']);
+Route::get('/karyawan/hapus/{kodepegawai}', [KaryawanController::class, 'hapus']);
 
 
