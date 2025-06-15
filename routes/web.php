@@ -6,6 +6,8 @@ use App\HTTP\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\GentengController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\CounterController;
 
 
 // import java.io; (sama kayak use)
@@ -71,5 +73,11 @@ Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
 Route::post('/karyawan/store', [KaryawanController::class, 'store']);
 Route::get('/karyawan/hapus/{kodepegawai}', [KaryawanController::class, 'hapus']);
+Route::get('/keranjang', [App\Http\Controllers\KeranjangController::class, 'indexkeranjang']);
+Route::get('/keranjang/tambah', [App\Http\Controllers\KeranjangController::class, 'tambahkeranjang']);
+Route::get('/keranjang/tambah/{ID}', [App\Http\Controllers\KeranjangController::class, 'storekeranjang']);
+Route::post('/keranjang/update', [App\Http\Controllers\KeranjangController::class, 'updatekeranjang']);
+Route::get('/keranjang/hapus/{ID}', [App\Http\Controllers\KeranjangController::class, 'keranjangbelanja']);
+Route::get('/counter', [CounterController::class, 'index']);
 
 
