@@ -1,52 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
-class KeranjangController extends Controller
+public function indexkeranjang()
 {
-	public function indexkeranjang()
-		{
-			$keranjangs = DB::table('keranjangbelanja')->paginate(10);
-            return view('tambahkeranjang', ['keranjangs' => $keranjangs]);
+    $keranjangs = DB::table('keranjangbelanja')->get();
+    return view('indexkeranjang', compact('keranjangs'));
+}
 
-		}
-	public function tambahkeranjang()
-		{
-			// memanggil view tambah
-			return view('tambahkeranjang');
-		}
+public function tambahkeranjang()
+{
+    return view('tambahkeranjang');
+}
 
-    public function storekeranjang($ID) //ada primary key
-    {
-        // mengambil data keranjang berdasarkan id yang dipilih
-        $keranjangs = DB::table('keranjangbelanja')
-        ->where('ID',$ID) //khusus operator =, kalau mau pakai selain itu harus sebutin operator di parameter kedua nya
-        ->get();
-        // passing data keranjang yang didapat ke view edit.blade.php
-        return view('tambahkeranjang',['keranjangs' => $keranjangs]);
-    }
-    // update data keranjang
-    public function updatekeranjang(Request $request)
-    {
-        // update data keranjang
-        DB::table('keranjangbelanja')->where('ID',$request->ID)->insert([
-            'KodeBarang' => $request->KodeBarang,
-            'Jumlah' => $request->Jumlah,
-            'Harga' => $request->Harga
-        ]);
-        // alihkan halaman ke halaman keranjang
-        return redirect('/keranjang');
-    }
-    // method untuk hapus data keranjang
-    public function keranjangbelanja($ID)
-    {
-        // menghapus data keranjang berdasarkan id yang dipilih
-        DB::table('keranjangbelanja')->where('ID',$ID)->delete();
+public function storekeranjang(Request $request)
+{
+    DB::table('keranjangbelanja')->insert([
+        'KodeBarang' => $request->KodeBarang,
+        'Jumlah' => $request->Jumlah,
+        'Harga' => $request->Harga,
+    ]);
+    return redirect('/keranjang')->with('success', 'Data berhasil ditambahkan!');
+}
 
-        // alihkan halaman ke halaman keranjang
-        return redirect('/keranjang');
-    }
+public function hapuskeranjang($id)
+{
+    DB::table('keranjangbelanja')->where('ID', $id)->delete();
+    return redirect('/keranjang')->with('success', 'Data berhasil dihapus!');
 }
