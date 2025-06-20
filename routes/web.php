@@ -85,7 +85,7 @@ Route::get('/keranjang/hapus/{ID}', [App\Http\Controllers\KeranjangController::c
 Route::get('/counter', [CounterController::class, 'index']);
 Route::get('/eas', [NewKaryawanController::class, 'indexnewkaryawan']);
 Route::get('/eas/tambah', [NewKaryawanController::class, 'tambah']);
-Route::get('/eas/hapus', [App\Http\Controllers\NewKaryawanController::class, 'hapus']);
-Route::get('/eas/store', [App\Http\Controllers\NewKaryawanController::class, 'store']);
+Route::get('/eas/hapus/{id}', [NewKaryawanController::class, 'hapus']);
+Route::post('/eas/store', [NewKaryawanController::class, 'store']);
 
 

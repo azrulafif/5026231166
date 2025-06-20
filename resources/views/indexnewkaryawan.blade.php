@@ -22,7 +22,7 @@
                <td class="align-middle">{{ $n->nip }}</td>
                     <td class="align-middle">{{$n->nama}}</td>
                     <td class="align-middle">{{ $n->pangkat }}</td>
-                    <td class="align-middle">{{$n->gaji }}</td>
+                    <td class="align-middle">Rp {{ number_format($n->gaji, 0, ',', '.') }}</td>
                     <td class="align-middle">
                         <a href="/eas/hapus/{{ $n->nip }}" class="btn btn-danger btn-sm">Hapus</a>
                     </td>

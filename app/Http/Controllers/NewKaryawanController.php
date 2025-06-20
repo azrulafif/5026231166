@@ -27,9 +27,9 @@ class NewKaryawanController extends Controller
         ]);
         return redirect('/eas');
 }
-     public function hapus($nama)
+     public function hapus($nip)
     {
-        DB::table('newkaryawan')->where('nama', $nama)->delete();
-        return redirect('/eas');
+        DB::table('newkaryawan')->where('nip', $nip)->delete();
+        return redirect('/eas')->with('success', 'Data karyawan berhasil dihapus!');
     }
 }

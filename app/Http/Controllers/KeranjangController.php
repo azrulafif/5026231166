@@ -1,4 +1,10 @@
 <?php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class KeranjangController extends Controller{
 
 public function indexkeranjang()
 {
@@ -25,4 +31,5 @@ public function hapuskeranjang($id)
 {
     DB::table('keranjangbelanja')->where('ID', $id)->delete();
     return redirect('/keranjang')->with('success', 'Data berhasil dihapus!');
+}
 }
